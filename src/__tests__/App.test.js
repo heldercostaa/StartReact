@@ -25,19 +25,19 @@ describe("App component", () => {
 
     apiMock.onPost("repositories").reply(200, {
       id: "123",
-      url: "https://github.com/josepholiveira",
-      title: "Desafio ReactJS",
-      techs: ["React", "Node.js"],
+      url: "https://github.com/heldercostaa",
+      title: "NoteIt",
+      techs: ["Node", "Express", "Jest"],
     });
 
     await actWait();
 
-    fireEvent.click(getByText("Adicionar"));
+    fireEvent.click(getByText("Add repository"));
 
     await actWait();
 
     expect(getByTestId("repository-list")).toContainElement(
-      getByText("Desafio ReactJS")
+      getByText("NoteIt")
     );
   });
 
@@ -47,9 +47,9 @@ describe("App component", () => {
     apiMock.onGet("repositories").reply(200, [
       {
         id: "123",
-        url: "https://github.com/josepholiveira",
-        title: "Desafio ReactJS",
-        techs: ["React", "Node.js"],
+        url: "https://github.com/heldercostaa",
+        title: "NoteIt",
+        techs: ["Node", "Express", "Jest"],
       },
     ]);
 
@@ -57,7 +57,7 @@ describe("App component", () => {
 
     await actWait();
 
-    fireEvent.click(getByText("Remover"));
+    fireEvent.click(getByText("Remove"));
 
     await actWait();
 
