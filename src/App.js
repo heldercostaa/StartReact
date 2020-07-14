@@ -41,13 +41,13 @@ function App() {
             {repo.title}
 
             <button onClick={() => handleRemoveRepository(repo.id)}>
-              Remove
+              Remover
             </button>
           </li>
         ))}
       </ul>
 
-      <button onClick={handleAddRepository}>Add repository</button>
+      <button onClick={handleAddRepository}>Adicionar</button>
     </div>
   );
 }
